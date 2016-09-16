@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIH-oG-C15">
+                                <state key="normal" title="Calculate Tip"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ub-6p-7BA"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-M8-aUW">
+                                <accessibility key="accessibilityConfiguration" identifier="tipPercentSlider"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="erp-GX-o9S"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="decideTipPercent:" destination="BYZ-38-t0r" eventType="valueChanged" id="bu1-nO-5Qy"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% amt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv9-oy-sh3">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Bill Amt" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibf-tS-blM">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.73465285277660097" green="0.70972537601827934" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.92685074359454134" green="0.98796073717948718" blue="0.78090808070198814" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mv9-oy-sh3" firstAttribute="top" secondItem="LiF-M8-aUW" secondAttribute="bottom" constant="8" id="DdO-0J-ZYX"/>
+                            <constraint firstItem="NIH-oG-C15" firstAttribute="top" secondItem="LiF-M8-aUW" secondAttribute="bottom" constant="46" id="JyP-eC-fCl"/>
+                            <constraint firstItem="LiF-M8-aUW" firstAttribute="top" secondItem="Ibf-tS-blM" secondAttribute="bottom" constant="43" id="S3F-Px-pxX"/>
+                            <constraint firstItem="LiF-M8-aUW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ef5-4W-Wn5"/>
+                            <constraint firstItem="LiF-M8-aUW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iQz-kH-9dh"/>
+                            <constraint firstItem="NIH-oG-C15" firstAttribute="centerX" secondItem="LiF-M8-aUW" secondAttribute="centerX" id="idz-h9-Jng"/>
+                            <constraint firstItem="mv9-oy-sh3" firstAttribute="centerX" secondItem="LiF-M8-aUW" secondAttribute="centerX" id="xuZ-Cf-DD2"/>
+                            <constraint firstItem="Ibf-tS-blM" firstAttribute="centerX" secondItem="LiF-M8-aUW" secondAttribute="centerX" id="zpJ-To-8rf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calculateTipButton" destination="NIH-oG-C15" id="fOV-ds-MQ7"/>
+                        <outlet property="displayPercentAmt" destination="mv9-oy-sh3" id="Es9-pw-ynp"/>
+                        <outlet property="inputBillAmt" destination="Ibf-tS-blM" id="s1P-BM-ZTX"/>
+                        <outlet property="tipPercentageSlider" destination="LiF-M8-aUW" id="K28-aD-zoM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
